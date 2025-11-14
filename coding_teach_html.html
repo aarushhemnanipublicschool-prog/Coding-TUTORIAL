@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Learn Coding — Interactive Basics</title>
+  <title>Ultimate Coding Tutorial</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
+      background: #0d0d0d;
+      color: #eaeaea;
       margin: 0;
       padding: 0;
     }
     header {
-      background: #222;
-      padding: 20px;
+      background: #1a1a1a;
+      padding: 25px;
       text-align: center;
-      font-size: 28px;
+      font-size: 32px;
+      font-weight: bold;
     }
     .container {
       padding: 20px;
     }
     .lesson {
-      background: #1b1b1b;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
+      background: #1c1c1c;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
     }
     textarea {
       width: 100%;
@@ -39,67 +41,141 @@
       resize: vertical;
     }
     button {
-      background: #4a00ff;
+      background: #6a00ff;
       border: none;
       padding: 10px 20px;
       color: white;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       margin-top: 10px;
       font-size: 16px;
     }
     button:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
     iframe {
       width: 100%;
-      height: 200px;
+      height: 220px;
       background: white;
       margin-top: 10px;
       border-radius: 8px;
+      border: 1px solid #333;
     }
   </style>
 </head>
 <body>
-  <header>Interactive Coding Lessons</header>
-
+  <header>Interactive Coding Mega Course</header>
   <div class="container">
 
+    <!-- LESSON 1 -->
     <div class="lesson">
       <h2>Lesson 1: HTML Basics</h2>
-      <p>Type some HTML below and hit Run to see what happens!</p>
-      <textarea id="htmlBox"><h1>Hello World!</h1></textarea>
-      <button onclick="runHTML()">Run</button>
+      <p>Write HTML code below and run it:</p>
+      <textarea id="htmlBox"><h1>Hello!</h1><p>I am learning HTML</p></textarea>
+      <button onclick="runHTML()">Run HTML</button>
       <iframe id="htmlOutput"></iframe>
     </div>
 
+    <!-- LESSON 2 -->
     <div class="lesson">
       <h2>Lesson 2: JavaScript Basics</h2>
-      <p>Write some JavaScript and see the output!</p>
-      <textarea id="jsBox">console.log('Hi bro');</textarea>
-      <button onclick="runJS()">Run</button>
+      <p>Type JavaScript and see what it prints:</p>
+      <textarea id="jsBox">console.log("JS is working!")</textarea>
+      <button onclick="runJS()">Run JS</button>
       <textarea id="jsOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 3 -->
+    <div class="lesson">
+      <h2>Lesson 3: CSS Basics</h2>
+      <p>Write CSS that styles the demo box:</p>
+      <textarea id="cssBox">#box { background: red; color: white; padding: 20px; }</textarea>
+      <button onclick="runCSS()">Apply CSS</button>
+      <div id="cssPreview" style="margin-top:10px; padding:20px; background:#222;">Styled Box Preview</div>
+    </div>
+
+    <!-- LESSON 4 -->
+    <div class="lesson">
+      <h2>Lesson 4: JavaScript Variables</h2>
+      <p>Test variable code:</p>
+      <textarea id="varBox">let x = 10; let y = 20; x + y;</textarea>
+      <button onclick="runVar()">Run Variables</button>
+      <textarea id="varOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 5 -->
+    <div class="lesson">
+      <h2>Lesson 5: JavaScript Functions</h2>
+      <textarea id="funcBox">function add(a,b){ return a+b } add(5,7)</textarea>
+      <button onclick="runFunc()">Run Function</button>
+      <textarea id="funcOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 6 -->
+    <div class="lesson">
+      <h2>Lesson 6: DOM Manipulation</h2>
+      <textarea id="domBox">document.getElementById('domTest').innerText = 'Changed!'</textarea>
+      <button onclick="runDOM()">Edit DOM</button>
+      <p id="domTest" style="padding:10px; background:#333;">This text will change</p>
+    </div>
+
+    $0
+
+    <!-- LESSON 8 -->
+    <div class="lesson">
+      <h2>Lesson 8: Loops (For & While)</h2>
+      <textarea id="loopBox">for(let i=1;i<=5;i++){ console.log(i) }</textarea>
+      <button onclick="runLoop()">Run Loop</button>
+      <textarea id="loopOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 9 -->
+    <div class="lesson">
+      <h2>Lesson 9: Arrays</h2>
+      <textarea id="arrBox">let fruits=['apple','banana','mango']; fruits.join(', ')</textarea>
+      <button onclick="runArr()">Run Array Code</button>
+      <textarea id="arrOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 10 -->
+    <div class="lesson">
+      <h2>Lesson 10: Objects</h2>
+      <textarea id="objBox">let person={name:'Alex',age:15}; person.name</textarea>
+      <button onclick="runObj()">Run Object Code</button>
+      <textarea id="objOutput" readonly></textarea>
+    </div>
+
+    <!-- LESSON 11 -->
+    <div class="lesson">
+      <h2>Lesson 11: Events</h2>
+      <textarea id="eventBox">document.getElementById('eventTest').style.color='cyan'</textarea>
+      <button onclick="runEvent()">Run Event</button>
+      <p id="eventTest" style="padding:10px; background:#333;">Watch me change!</p>
+    </div>
+
+    <!-- LESSON 12 -->
+    <div class="lesson">
+      <h2>Lesson 12: Mini Project — Random Color Generator</h2>
+      <textarea id="colorBox">document.body.style.background = '#' + Math.floor(Math.random()*16777215).toString(16)</textarea>
+      <button onclick="runColor()">Generate Random Color</button>
+    </div>
     </div>
 
   </div>
 
   <script>
-    function runHTML() {
-      let code = document.getElementById("htmlBox").value;
-      let iframe = document.getElementById("htmlOutput");
-      iframe.srcdoc = code;
-    }
-
-    function runJS() {
-      let code = document.getElementById("jsBox").value;
-      let output = document.getElementById("jsOutput");
-      try {
-        let result = eval(code);
-        output.value = result !== undefined ? result : "(no output)";
-      } catch (err) {
-        output.value = "Error: " + err;
-      }
-    }
+    function runHTML(){ document.getElementById("htmlOutput").srcdoc = document.getElementById("htmlBox").value; }
+    function runJS(){ try { let r = eval(document.getElementById("jsBox").value); document.getElementById("jsOutput").value = r ?? "(no output)"; } catch(e){ document.getElementById("jsOutput").value = e; }}
+    function runCSS(){ let css = document.getElementById("cssBox").value; document.getElementById("cssPreview").style = ""; const style = document.createElement('style'); style.innerHTML = css; document.body.appendChild(style); }
+    function runVar(){ try{ let r = eval(document.getElementById('varBox').value); document.getElementById('varOutput').value = r; } catch(e){ document.getElementById('varOutput').value = e; }}
+    function runFunc(){ try{ let r = eval(document.getElementById('funcBox').value); document.getElementById('funcOutput').value = r; } catch(e){ document.getElementById('funcOutput').value = e; }}
+    function runDOM(){ try{ eval(document.getElementById('domBox').value); } catch(e){ alert(e) }}
+    function loadProj(){ try{ eval(document.getElementById('projBox').value); } catch(e){ alert(e) }}
+      function runLoop(){ try{ let r = eval(document.getElementById('loopBox').value); document.getElementById('loopOutput').value = r ?? '(no output)'; } catch(e){ document.getElementById('loopOutput').value = e; }}
+    function runArr(){ try{ let r = eval(document.getElementById('arrBox').value); document.getElementById('arrOutput').value = r; } catch(e){ document.getElementById('arrOutput').value = e; }}
+    function runObj(){ try{ let r = eval(document.getElementById('objBox').value); document.getElementById('objOutput').value = r; } catch(e){ document.getElementById('objOutput').value = e; }}
+    function runEvent(){ try{ eval(document.getElementById('eventBox').value); } catch(e){ alert(e) }}
+    function runColor(){ try{ eval(document.getElementById('colorBox').value); } catch(e){ alert(e) }}
   </script>
 </body>
 </html>
